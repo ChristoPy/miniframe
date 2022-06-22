@@ -1,0 +1,16 @@
+{
+  "name": "miniframe",
+  "version": "0.0.1",
+  "description": "Take stylish screenshots of your webpages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "electron ."
+  },
+  "keywords": ["miniframe", "mini", "frame", "screenshot", "webpage"],
+  "author": "Christopher Ribeiro <christo_campiglia@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^19.0.4"
+  }
+}
