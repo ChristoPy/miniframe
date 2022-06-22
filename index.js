@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const {resolve} = require('path')
+const { resolve } = require('path')
+const args = [...Array.from(process.argv).slice(2)]
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
@@ -13,7 +14,10 @@ const createWindow = () => {
     }
   })
 
-  mainWindow.loadURL('https://github.com')
+  const url = args[0]
+  const hasProtocol = url.startsWith('http://') || url.startsWith('https://')
+
+  mainWindow.loadURL(hasProtocol ? url : `https://${url}`)
 
   mainWindow.webContents.on('dom-ready', () => {
     mainWindow.webContents.executeJavaScript(`;(() => {
